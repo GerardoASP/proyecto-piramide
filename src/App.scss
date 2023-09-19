@@ -1,0 +1,54 @@
+/* Estilo para un contenedor que muestra una animación de carga */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* Estilo para el cubo que se animará */
+    .piramide {
+      width: 100px;
+      height: 100px;
+      transform-style: preserve-3d;
+      animation: spin 8s infinite linear;
+      position: fixed;
+      bottom: 100px;
+      right: 100px;
+      
+      /* Estilo para las caras del cubo */
+      div {
+        position: absolute;
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+        opacity: 0.8;
+        /* Estilos para las diferentes caras del cubo */
+        &.front {
+          transform: translateZ(30px) rotateX(20deg) translateY(5px);
+          background: linear-gradient(45deg, #F25022, #FFB900);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+  
+        &.back {
+          transform: translateZ(-22px) rotateX(-30deg) translateY(10px);
+          background: linear-gradient(45deg, #F25022, #FFB900);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+        &.bottom {
+          transform: rotateX(90deg) translateZ(-50px);
+          background: linear-gradient(45deg, #F25022, #FFB900);
+        }
+  
+        &.left {
+          transform: rotateY(90deg) translateZ(21px) rotateX(30deg) translateY(5px);
+          background: linear-gradient(45deg, #F25022, #FFB900);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+  
+        &.right {
+          transform: rotateY(90deg) translateZ(-27px) rotateX(-20deg) translateY(5px);
+          background: linear-gradient(45deg, #F25022, #FFB900);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+      }
+    }
+}
